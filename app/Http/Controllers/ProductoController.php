@@ -87,8 +87,6 @@ class ProductoController extends Controller
     {
         $producto = Producto::find($idproducto);
         $producto->delete();
-        return response()->json([
-          'eliminado' => 'el producto ' . $producto->nombre . ' fue eliminado'
-        ], 200);
+        return response()->json($producto, 200);
     }
 }
